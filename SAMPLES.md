@@ -1,5 +1,5 @@
 # Samples
-Here are some samples of working with this project. for information about this project refere to [README file](https://github.com/mohamad-amin/LR0AutomataGenerator/blob/master/README.md).
+Here are some samples of working with this project. for information about this project refere to [project's main page](https://github.com/mohamad-amin/LR0AutomataGenerator).
 
 ## Sample 2
 We want to create an LR0 Automata for this grammer:
