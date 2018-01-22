@@ -251,3 +251,117 @@ Rules:
 	T -> (E).
 --------------------------------------------
 ```
+
+## Sample 3
+We want to create an LR0 Automata for this grammer:
+```
+Terminals: { a, b, d, c }
+Non-Terminals: { S, A, B }
+Productions:
+  S -> A
+  S -> B
+  A -> bA
+  A -> d
+  B -> aB
+  B -> c
+```
+
+#### Input
+
+```
+Enter terminals separated with a whitespace character
+a b d c
+Enter non-terminals separated with a whitespace character
+S A B
+Enter start symbol
+S
+Enter number of rules: 
+6
+Enter a rule, starting with a non-terminal, then '->' and then some terminal/non-terminal (s), 
+Note: every terminal and '-> sign' in a rule must be separated from the previous tokens with a whitespace
+S -> A
+Enter a rule, starting with a non-terminal, then '->' and then some terminal/non-terminal (s), 
+Note: every terminal and '-> sign' in a rule must be separated from the previous tokens with a whitespace
+S -> B
+Enter a rule, starting with a non-terminal, then '->' and then some terminal/non-terminal (s), 
+Note: every terminal and '-> sign' in a rule must be separated from the previous tokens with a whitespace
+A -> b A
+Enter a rule, starting with a non-terminal, then '->' and then some terminal/non-terminal (s), 
+Note: every terminal and '-> sign' in a rule must be separated from the previous tokens with a whitespace
+A -> d
+Enter a rule, starting with a non-terminal, then '->' and then some terminal/non-terminal (s), 
+Note: every terminal and '-> sign' in a rule must be separated from the previous tokens with a whitespace
+B -> a B
+Enter a rule, starting with a non-terminal, then '->' and then some terminal/non-terminal (s), 
+Note: every terminal and '-> sign' in a rule must be separated from the previous tokens with a whitespace
+B -> c
+```
+
+#### Output
+```
+--------------------------------------------
+----------------- RESULT -------------------
+--------------------------------------------
+Start state -> 0
+--------------------------------------------
+State 0
+Rules:
+	S -> .A
+	A -> .bA
+	A -> .d
+	S -> .B
+	B -> .aB
+	B -> .c
+Links:
+	A -> 1
+	a -> 6
+	b -> 2
+	B -> 5
+	c -> 8
+	d -> 4
+--------------------------------------------
+State 1
+Rules:
+	S -> A.
+--------------------------------------------
+State 2
+Rules:
+	A -> b.A
+	A -> .bA
+	A -> .d
+Links:
+	A -> 3
+	b -> 2
+	d -> 4
+--------------------------------------------
+State 3
+Rules:
+	A -> bA.
+--------------------------------------------
+State 4
+Rules:
+	A -> d.
+--------------------------------------------
+State 5
+Rules:
+	S -> B.
+--------------------------------------------
+State 6
+Rules:
+	B -> a.B
+	B -> .aB
+	B -> .c
+Links:
+	a -> 6
+	B -> 7
+	c -> 8
+--------------------------------------------
+State 7
+Rules:
+	B -> aB.
+--------------------------------------------
+State 8
+Rules:
+	B -> c.
+--------------------------------------------
+```
